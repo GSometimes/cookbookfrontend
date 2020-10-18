@@ -5,6 +5,8 @@ const router = express.Router()
 const mongoose = require('../db/connection')
 const CookbookRoute = require('../models/cookbook')
 
+const seedData = require('../db/seed')
+
 // Write the route to list all cookbooks
 router.get('/', async (req, res) => {
     const cookbooks = await CookbookRoute.find({})

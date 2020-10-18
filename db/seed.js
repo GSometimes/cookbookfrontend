@@ -1,6 +1,11 @@
 const Author = require('../models/Author')
 const Cookbook = require('../models/Cookbook')
 
+const authorRoutes = require('../controllers/authorRoutes')
+const cookbookRoutes = require('../controllers/cookbookRoutes')
+
+const db = mongoose.connection;
+
 Author.find({}).remove(() => {
   Cookbook.find({}).remove(() => {
     let meera = Author.create({
