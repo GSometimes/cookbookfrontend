@@ -15,13 +15,13 @@ router.get('/', async (req, res) => {
 })
 // Write the route to get cookbook by title
 router.get('/:title', async (req, res) => {
-    const cookbooks = await CookbookRoute.find(req.params.title)
+    const cookbooks = await CookbookRoute.find({title: req.params.title})
     res.json({status: 200, data: cookbooks})
 })
 
 // Write the route to get cookbook by year published
-router.get('/:year', async (req, res) => {
-    const cookbooks = await CookbookRoute.find(req.params.year)
+router.get('/year/:year', async (req, res) => {
+    const cookbooks = await CookbookRoute.find({yearPublished: req.params.year})
     res.json({status: 200, data: cookbooks})
 })
 // Write the route to create a cookbook

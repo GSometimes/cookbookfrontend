@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 
 // Write the route to get authors by firstname
 router.get('/:name', async (req, res) => {
-    const authors = await AuthorRoute.find(req.params.name)
+    const authors = await AuthorRoute.find({firstName: req.params.name})
     res.json({status: 200, data: authors})
 })
 // Write the route to create an author:
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
 })
 // Write the route to update an author
 router.put('/:name', async (req, res) => {
-    const authors = await AuthorRoute.findOneAndUpdate(req.params.name, req.body, {new:true})
+    const authors = await AuthorRoute.findOneAndUpdate({firstName: req.params.name}, req.body, {new:true})
     res.json({status: 200, msg: 'updated', data: authors})
 })
 // Update the cookbook using Postman.

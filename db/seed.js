@@ -3,9 +3,6 @@ const Cookbook = require('../models/Cookbook')
 
 const mongoose = require('./connection')
 
-// const authorRoutes = require('../controllers/authorRoutes')
-// const cookbookRoutes = require('../controllers/cookbookRoutes')
-
 const db = mongoose.connection;
 
 Author.find({}).deleteMany(() => {
