@@ -1,7 +1,20 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/cookbooks_db', { useNewUrlParser: true })
+const mongoURI = ('mongodb://localhost/cookbooks_db')
 
 mongoose.Promise = Promise
 
-module.exports = mongoose
+const config = {
+	useUnifiedTopology: true,
+	useNewUrlParser: true,
+};
+
+mongoose.connect(mongoURI, config);
+
+const db = mongoose.connection;
+
+db.on('error', (err) => console.log(err.message + ' is mongod not running?'));
+db.on('connected', () => console.log('mongo connected: ', mongoURI));
+db.on('disconnected', () => console.log('mongo disconnected'));
+
+module.exports = mongoose;

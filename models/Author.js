@@ -7,7 +7,7 @@ const authorSchema = new Schema ({
     firstName: {type: String, require: true},
     lastName: {type: String, require: true},
     cookbooks: [
-        {ref: 'Author', type: Schema.Types.ObjectId}
+        {ref: String, type: Schema.Types.ObjectId}
     ]
 })
 

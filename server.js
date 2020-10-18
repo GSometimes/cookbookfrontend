@@ -1,10 +1,8 @@
+require('dotenv').config()
 const express = require('express')
 const logger = require('morgan')
 const app = express()
 const PORT = process.env.PORT
-
-const cookbookRouter = require('./controllers/cookbookRoutes')
-const authorRouter = require('./controllers/authorRoutes')
 
 // Add the middleware code needed to accept incoming data and add it to req.body
 app.use(logger('dev'));
