@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     res.json({status: 200, data: cookbooks})
 })
 // Write the route to get cookbook by title
-router.get('/title/:title', async (req, res) => {
+router.get('/:title', async (req, res) => {
     const cookbooks = await CookbookRoute.find({title: req.params.title})
     res.json({status: 200, data: cookbooks})
 })
