@@ -42,13 +42,26 @@ repository.
 
 Update the below routing table with the routes
 
+Author
+
 | **URL**     | **HTTP Verb** | **Action** | **Description**             |
 | ----------- | ------------- | -------------- | ---------------------- |
-| /     | GET           |    index            | get all fruits         |
-| /     | POST          |    create            | create a new fruit     |
-| / | GET           |    show            | get a single fruit     |
-| / | PUT           |    update            | update a single fruit  |
-| / | DELETE        |    destroy            | destroy a single fruit |
+| /api/authors     | GET           |    index            | get all authors         |
+| /api/authors     | POST          |    create            | create a new author     |
+| /api/authors/:name | GET           |    show            | get a single author by name     |
+| /api/authors/:name | PUT           |    update            | update a single author  |
+| / | DELETE        |    destroy            | destroy a single author |
+
+Cookbook
+
+| **URL**     | **HTTP Verb** | **Action** | **Description**             |
+| ----------- | ------------- | -------------- | ---------------------- |
+| /api/cookbooks/     | GET           |    index            | get all cookbooks         |
+| /api/cookbooks/     | POST          |    create            | create a new cookbook     |
+| /api/cookbooks/:title | GET           |    show            | get a single cookbook by name    |
+| /api/cookbooks/year/:year | GET           |    show            | get a single cookbook by year    |
+| /api/cookbooks/:id | PUT           |    update            | update a single cookbook  |
+| /api.cookbooks/:title | DELETE        |    destroy            | destroy a single cookbook |
 
 ## Plagiarism
 
