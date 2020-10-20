@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
-const mongoURI = ('mongodb://localhost/cookbooks_db')
+// const mongoURI = ('mongodb://localhost/cookbooks_db')
+const { MONGODBURI } = process.env;
 
 mongoose.Promise = Promise
 
@@ -9,7 +10,7 @@ const config = {
 	useNewUrlParser: true,
 };
 
-mongoose.connect(mongoURI, config);
+mongoose.connect(MONGODBURI, config);
 
 const db = mongoose.connection;
 
