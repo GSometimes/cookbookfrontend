@@ -26,9 +26,12 @@ router.put('/:name', async (req, res) => {
     const authors = await AuthorRoute.findOneAndUpdate({firstName: req.params.name}, req.body, {new:true})
     res.json({status: 200, msg: 'updated', data: authors})
 })
-// Update the cookbook using Postman.
-//Am I supposed to put code here? I was able to update my meera to my name but I'm not sure what to add here.
 
-// Bonus: Write the route to delete cookbooks by author name. (hint: There are a couple on different ways to do this and you may have to change/add code in other files)
+// Delete cookbooks by author
+router.delete('/:id', async (req, res) =>{
+    const authors = await AuthorRoute.findByIdAndDelete(req.params.id)
+        res.json({status: 200, msg: 'item deleted'})
+});
+
 
 module.exports = router
